@@ -31,7 +31,7 @@ body{
 }
 
 .contenedor{
-    width: 120rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 
@@ -42,10 +42,72 @@ body{
 
 }
 .navgacion-principal{
-   
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
+
+@media (min-width: 480px){
+
+}
+
+@media (min-width: 768px) {
+  .navgacion-principal{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1140px){
+    
+}
+
+@media (min-width: 1400px) {
+  
+}
+ 
 
 .navgacion-principal a{
-   background-color: var(--primario);
+   color: var(--blanco);
+   text-decoration: none;
+   font-size: 2rem;
+   font-weight: bold;
+   padding: 1rem;
 }
+
+.navgacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+ /* Lo que pongas por fuera de los media Queris se va aplicar desde el inicio y con los media
+ querys puedes ir cambiando su comportamiento a medida de que vaya cambiendo la resolucion 
+ 
+ 
+ body{
+    background-color: green;
+}
+
+ Resusolucion para telefonos a partir de los 480px va aplicar estos estilos 
+
+@media (min-width: 480px){
+    body{
+        background-color: lightblue;
+    }
+}
+
+ Resusolucion para tablets partir de los 768px va aplicar estos estilos
+
+
+@media (min-width: 768px){
+   body{
+    background-color: yellow;
+   }
+}
+ */
+
+
+ 
+ 
+
