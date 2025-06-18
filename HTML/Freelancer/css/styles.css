@@ -1,87 +1,132 @@
 /* PseudoSelectores */
 
-:root{
+:root {
     --blanco: #FFFFFF;
     --oscuro: #212121;
     --primario: #FFC107;
     --secundario: #0097A7;
     --gris: #757575;
+    --grisClaro: #DFE9F3;
 
-    
+
 
 }
 
-html{
+html {
     font-size: 62.5%;
+    box-sizing: border-box;
 }
 
-body{
-    font-size: 16px; /* 1rem = 10px */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;  /* 1rem = 10px */
     font-family: "Krub", sans-serif;
+    /* Aplicando degradados con css  */
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
 
-.titulo{
-    text-align: center;
+h1 {
     font-size: 3.8rem;
-    
 }
 
-.titulo span{
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+.titulo span {
     font-size: 2rem;
 }
 
-.contenedor{
+.contenedor {
     max-width: 120rem;
     margin: 0 auto;
 }
 
-
-.nav-bg{
-
- background-color: var(--secundario);
-
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
 }
-.navgacion-principal{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
 
-
-@media (min-width: 480px){
-
+.sombra{
+   -webkit-box-shadow: 0 5px 15px 0 rgba(112,112,112,0.54);
+   box-shadow: 0 5px 15px 0 rgba(112,112,112,0.54);
+   background-color: var(--blanco);
+   border-radius: 1rem;
 }
 
 @media (min-width: 768px) {
-  .navgacion-principal{
-    flex-direction: row;
-    justify-content: space-between;
-  }
+    .boton {
+        width: auto;
+    }
 }
 
-@media (min-width: 1140px){
-    
+.nav-bg {
+
+    background-color: var(--secundario);
+
 }
 
-@media (min-width: 1400px) {
-  
-}
- 
-
-.navgacion-principal a{
-   color: var(--blanco);
-   text-decoration: none;
-   font-size: 2rem;
-   font-weight: bold;
-   padding: 1rem;
+.navgacion-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.navgacion-principal a:hover{
+
+@media (min-width: 768px) {
+    .navgacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navgacion-principal a {
+    display: block;
+    width: 99%;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .navgacion-principal a {
+        width: auto;
+    }
+}
+
+.navgacion-principal a:hover {
     background-color: var(--primario);
     color: var(--oscuro);
 }
 
- /* Lo que pongas por fuera de los media Queris se va aplicar desde el inicio y con los media
+/* Lo que pongas por fuera de los media Queris se va aplicar desde el inicio y con los media
  querys puedes ir cambiando su comportamiento a medida de que vaya cambiendo la resolucion 
  
  
@@ -108,6 +153,94 @@ body{
  */
 
 
- 
- 
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
 
+.contenido-hero {
+    position: absolute;
+    background-color: rgb(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* servicios */
+
+@media (min-width: 768px) {
+   .servicios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+}
+}
+
+.servicio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.servicio h3{
+  color: var(--secundario);
+  font-weight: bold;
+}
+
+.servicio p{
+    line-height: 2;
+}
+
+.servicio .iconos{
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* Contacto */
+
+.formulario{
+ background-color: var(--gris);
+ width: min(60rem, 100%);
+ margin: 0 auto;
+ padding: 2rem;
+ border-radius: 1rem;
+}
+
+.formulario fieldset{
+   border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
