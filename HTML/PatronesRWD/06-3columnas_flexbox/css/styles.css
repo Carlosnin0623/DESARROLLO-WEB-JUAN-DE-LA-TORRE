@@ -55,7 +55,16 @@ p {
     justify-content: space-between;
   }
 
+  .contenido-principal{
+    flex-basis: calc(60% - 1rem);
+  }
+
   .sidebar{
     flex-basis: calc(20% - 1rem);
+  }
+
+  .sidebar-1{
+    order: -1; /* Order se activa cuando tenemos un contenedor padre con flex y nos permite posicionar elementos 
+    con este -1 le decimos que sea el primero osea a la izquierda */
   }
 }
