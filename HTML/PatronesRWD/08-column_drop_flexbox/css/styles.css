@@ -48,3 +48,27 @@ p {
 }
 
 /** CODIGO AQUI **/
+
+@media (min-width: 480px) {
+  .column-drop-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Esto es para que se desborde hacia abajo si ya tenemos el 100% el espacio del contenedor padre */
+    /* flex-wrap: wrap-reverse; wrap-reverse para ponder el contenido de abajo hacia arriba */
+  }
+
+  .contenido-principal{
+    flex-basis: calc(50% - 1rem); /* Esto define el tamaño o lo que ocupa el elemento dentro del contenedor padre */
+  }
+
+  .primera{
+    flex-basis: calc(50% - 1rem); /* Esto define el tamaño o lo que ocupa el elemento dentro del contenedor padre */
+  }
+}
+@media (min-width: 768px) {
+  .contenido-principal,
+  .primera,
+  .segunda{
+    flex-basis: calc(33.3% - 1rem);
+  }
+}
